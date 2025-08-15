@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111111;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80%;
+}
+
+/* Mobile optimization - prevent scrolling and ensure full screen */
+html,
+body {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent zoom on input focus on iOS */
+input,
+select,
+textarea,
+button {
+  font-size: 16px;
+}
+
+/* Prevent pull-to-refresh on mobile */
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Touch optimization */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for score display */
+.selectable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
